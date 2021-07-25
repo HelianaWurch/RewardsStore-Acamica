@@ -1,9 +1,14 @@
+import "./styles/styles.css";
+import Nav from "./components/Nav";
+import Header from "./components/Header";
+import Main from "./components/Main";
+
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<p>Heliana Wurch - Rewards Store</p>
-			</header>
+			<Nav />
+			<Header />
+			<Main />
 		</div>
 	);
 }
