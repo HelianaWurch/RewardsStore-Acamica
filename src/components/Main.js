@@ -1,10 +1,13 @@
 import React from "react";
 import SearchProducts from "../scenes/SearchProducts/SearchProducts";
+import { AllProductsContextProvider } from "../contexts/AllProductsContext";
 
 function Main() {
 	return (
 		<main>
-			<SearchProducts />
+			<AllProductsContextProvider>
+				<SearchProducts />
+			</AllProductsContextProvider>
 		</main>
 	);
 }
