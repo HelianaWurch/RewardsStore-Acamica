@@ -13,12 +13,7 @@ function AllProductsContextProvider({ children }) {
 	}, []);
 
 	return (
-		<AllProductsContext.Provider
-			value={{
-				isLoading,
-				products,
-			}}
-		>
+		<AllProductsContext.Provider value={[isLoading, products]}>
 			{children}
 		</AllProductsContext.Provider>
 	);

@@ -4,7 +4,7 @@ import Product from "./components/Product";
 import { AllProductsContext } from "../../contexts/AllProductsContext";
 
 function SearchProducts() {
-	const { isLoading, products } = useContext(AllProductsContext);
+	const [isLoading, products] = useContext(AllProductsContext);
 
 	console.log(products);
 	return (
