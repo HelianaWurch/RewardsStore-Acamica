@@ -1,3 +1,77 @@
 .menu h6 {
 	padding: 1.5rem;
 }
+
+.card-category {
+	margin-bottom: 0;
+	font-weight: 500;
+	color: lightslategrey;
+}
+
+.icon-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: -1rem;
+	margin-bottom: -2rem;
+}
+
+.icon-bag {
+	padding: 0.7rem;
+	width: 25%;
+	z-index: 1;
+}
+
+.icon-bag-hover {
+	padding: 0.7rem;
+	margin-right: 0.5rem;
+	width: 25%;
+}
+
+.card-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 90%;
+	color: white;
+	background-color: #0ad4fa;
+	z-index: 5;
+}
+
+.card-body-hover {
+	display: flex;
+	padding: 1rem;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 35%;
+}
+.card-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin-top: 5%;
+}
+
+.card-hover-coin {
+	padding-top: 20%;
+}
+
+.card-btn {
+	background-color: white;
+	font-size: 1.5rem;
+	color: lightslategrey;
+	width: 15rem;
+	padding: 0.5rem;
+	border: 0;
+	border-radius: 25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-ms-border-radius: 25px;
+	-o-border-radius: 25px;
+}
+
+.card {
+	cursor: pointer;
+}

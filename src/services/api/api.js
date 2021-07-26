@@ -9,7 +9,7 @@ myHeaders.append("Content-Type", "application/json");
 
 //---------------------------------------------USER-----------------------------------------------
 
-export function getUser() {
+export function getUser(fn) {
 	let requestOptions = {
 		method: "GET",
 		headers: myHeaders,
@@ -18,13 +18,15 @@ export function getUser() {
 
 	fetch(`${API_URL}/user/me`, requestOptions)
 		.then((response) => response.json())
-		.then((json) => console.log(json))
+		.then((json) => {
+			fn(json);
+		})
 		.catch((err) => console.log(err));
 }
 
 // -----------------------------------------PRODUCTS-----------------------------------------------
 
-export function getProducts(setProd) {
+export function getProducts(fn) {
 	let requestOptions = {
 		method: "GET",
 		headers: myHeaders,
@@ -35,7 +37,7 @@ export function getProducts(setProd) {
 		.then((response) => response.json())
 		.then((json) => {
 			console.log(json);
-			setProd(json);
+			fn(json);
 		})
 		.catch((err) => console.log(err));
 }
