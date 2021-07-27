@@ -1,11 +1,13 @@
-.menu h6 {
-	padding: 1.5rem;
-}
-
 .card-category {
 	margin-bottom: 0;
 	font-weight: 500;
 	color: lightslategrey;
+}
+
+.grl-font-style {
+	color: white;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 .icon-container {
@@ -74,4 +76,55 @@
 
 .card {
 	cursor: pointer;
+}
+
+.btn-user-coins {
+	border: 0;
+	padding-top: 0.5rem;
+	font-size: 1rem;
+	font-weight: 700;
+	color: lightslategrey;
+	background-color: transparent;
+}
+
+.btn-buy-coins {
+	padding: 0 2rem;
+	border: 0;
+	background-color: transparent;
+}
+
+.nav-link-a {
+	cursor: pointer;
+	padding: 2rem;
+}
+
+.grl-font-style:hover {
+	color: #0ad4fa;
+	text-decoration: none;
+}
+
+/* MODAL */
+
+.modalBackground {
+	width: 110vw;
+	height: 100vh;
+	background-color: rgba(60, 60, 60, 0.9);
+	position: fixed;
+	left: -5%;
+	padding: 10rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-coins {
+	margin: 1rem;
+	background-color: #0ad4fa;
+}
+
+.btn-coins:hover {
+	background-color: rgba(60, 60, 60);
+}
+
+.modal-title {
+	color: rgba(60, 60, 60);
 }
