@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import iconCoin from "../services/img/icons/coin.svg";
+import { UserContext } from "../contexts/UserContext";
+import { postCoins } from "../services/api/api";
 import "../styles/styles.css";
 
 export function Modal({ closeModal }) {
+	const [userInfo, setUserInfo] = useContext(UserContext);
+
+	function handleCoins(amount) {
+		postCoins(amount, userInfo, setUserInfo);
+	}
+
 	return (
 		<div className="modalBackground">
 			<div className="modalContainer">
@@ -21,15 +29,27 @@ export function Modal({ closeModal }) {
 							</button>
 						</div>
 						<div className="modal-body d-flex justify-content-center">
-							<button type="button" className="btn btn-coins grl-font-style">
+							<button
+								type="button"
+								className="btn btn-coins grl-font-style"
+								onClick={() => handleCoins(1000)}
+							>
 								1000
 								<img className="ml-2 mt-1" src={iconCoin} alt="coin" />
 							</button>
-							<button type="button" className="btn btn-coins grl-font-style">
+							<button
+								type="button"
+								className="btn btn-coins grl-font-style"
+								onClick={() => handleCoins(5000)}
+							>
 								5000 <img className="ml-2 mt-1" src={iconCoin} alt="coin" />
 							</button>
-							<button type="button" className="btn btn-coins grl-font-style">
-								7000 <img className="ml-2 mt-1" src={iconCoin} alt="coin" />
+							<button
+								type="button"
+								className="btn btn-coins grl-font-style"
+								onClick={() => handleCoins(7500)}
+							>
+								7500 <img className="ml-2 mt-1" src={iconCoin} alt="coin" />
 							</button>
 						</div>
 						<div className="modal-footer">
