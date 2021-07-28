@@ -5,14 +5,19 @@ const UserContext = createContext();
 
 function UserContextProvider({ children }) {
 	const [isLoading, setLoading] = useState(true);
-	const [userInfo, setUserInfo] = useState([]);
+	const [userInfo, setUserInfo] = useState({
+		name: "",
+		points: 0,
+	});
 
 	useEffect(() => {
 		setLoading(true);
 		getUser(setUserInfo);
 	}, []);
 
-	return <UserContext.Provider value={[isLoading, userInfo]}>{children}</UserContext.Provider>;
+	return (
+		<UserContext.Provider value={[isLoading, userInfo, setUserInfo]}>{children}</UserContext.Provider>
+	);
 }
 
 export { UserContextProvider, UserContext };

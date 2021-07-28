@@ -1,3 +1,8 @@
+header img {
+	object-fit: cover;
+	height: 30rem;
+}
+
 .card-category {
 	margin-bottom: 0;
 	font-weight: 500;
@@ -88,7 +93,7 @@
 }
 
 .btn-buy-coins {
-	padding: 0 2rem;
+	padding: 0;
 	border: 0;
 	background-color: transparent;
 }
@@ -98,9 +103,15 @@
 	padding: 2rem;
 }
 
-.grl-font-style:hover {
+.nav-link-a:hover {
 	color: #0ad4fa;
 	text-decoration: none;
+}
+
+.nav-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* MODAL */
@@ -111,9 +122,10 @@
 	background-color: rgba(60, 60, 60, 0.9);
 	position: fixed;
 	left: -5%;
-	padding: 10rem;
+	padding: 10%;
 	justify-content: center;
 	align-items: center;
+	z-index: 50;
 }
 
 .btn-coins {
@@ -122,6 +134,7 @@
 }
 
 .btn-coins:hover {
+	color: #0ad4fa;
 	background-color: rgba(60, 60, 60);
 }
 

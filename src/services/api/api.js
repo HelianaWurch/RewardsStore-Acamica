@@ -56,3 +56,26 @@ export function getHistory() {
 		.then((json) => console.log(json))
 		.catch((err) => console.log(err));
 }
+
+// ------------------------------------------POINTS------------------------------------------------
+
+export function postCoins(amount, userInfo, setUserInfo) {
+	let coins = JSON.stringify({ amount: amount });
+
+	let requestOptions = {
+		method: "POST",
+		headers: myHeaders,
+		body: coins,
+		redirect: "follow",
+	};
+
+	fetch(`${API_URL}/user/points`, requestOptions)
+		.then((response) => response.json())
+		.then((json) => {
+			const newCoinsState = { ...userInfo };
+			newCoinsState.points = json["New Points"];
+			setUserInfo(newCoinsState);
+			setUserInfo(json);
+		})
+		.catch((err) => console.log(err));
+}

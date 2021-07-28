@@ -1,37 +1,23 @@
 import React, { useContext, useState } from "react";
 import iconCoin from "../services/img/icons/coin.svg";
 import img2 from "../services/img/aerolab-logo.svg";
+import { Link } from "react-router-dom";
 
-import Modal from "./Modal";
+import ModalCoins from "./ModalCoins";
 
 import { UserContext } from "../contexts/UserContext";
 
 function Nav() {
 	const [isLoading, userInfo] = useContext(UserContext);
-
 	const [openModal, setOpenModal] = useState(false);
 
 	return (
-		<nav className="container-fluid bg-dark text-light fixed-top">
-			<div className="d-flex justify-content-between py-2 pl-2">
-				<div className="py-4 pr-5 mr-5">
-					<img src={img2} alt="web-logo" />
-				</div>
-				<div className="row pl-5 ml-5">
-					<a className="grl-font-style nav-link-a">Home</a>
-					<a className="grl-font-style nav-link-a">Historial</a>
-					<button
-						className="grl-font-style btn-buy-coins"
-						onClick={() => {
-							setOpenModal(true);
-						}}
-					>
-						Buy Coins
-					</button>
-				</div>
-				<div className="inline-block">
+		<div>
+			{openModal && <ModalCoins closeModal={setOpenModal} />}
+			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+				<div className="inline-block navbar-brand">
 					<div className="container py-2">
-						<span className="d-flex pt-3 ml-2 pl-3">
+						<span className="d-flex">
 							<h6 className="pt-2">{userInfo.name}</h6>
 							<span className="badge badge-light ml-2 pl-3">
 								<button
@@ -47,9 +33,37 @@ function Nav() {
 						</span>
 					</div>
 				</div>
-			</div>
-			{openModal && <Modal closeModal={setOpenModal} />}
-		</nav>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span className="navbar-toggler-icon"></span>
+				</button>
+				<div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+					<div className="navbar-nav nav-box">
+						<Link className="grl-font-style nav-link-a" to="/">
+							HOME
+						</Link>
+						<Link className="grl-font-style  nav-link-a" to="/history">
+							HISTORY
+						</Link>
+						<button
+							className="grl-font-style  nav-link-a btn-buy-coins"
+							onClick={() => {
+								setOpenModal(true);
+							}}
+						>
+							BUY COINS
+						</button>
+					</div>
+				</div>
+			</nav>
+		</div>
 	);
 }
 
