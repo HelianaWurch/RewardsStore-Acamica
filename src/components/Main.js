@@ -2,6 +2,7 @@ import React from "react";
 import SearchProducts from "../scenes/SearchProducts/SearchProducts";
 import History from "../scenes/History/History";
 import { AllProductsContextProvider } from "../contexts/AllProductsContext";
+import { FiltersContextProvider } from "../contexts/FiltersContext";
 import { Route, Switch } from "react-router-dom";
 
 function Main() {
@@ -10,7 +11,9 @@ function Main() {
 			<Switch>
 				<Route exact path="/">
 					<AllProductsContextProvider>
-						<SearchProducts />
+						<FiltersContextProvider>
+							<SearchProducts />
+						</FiltersContextProvider>
 					</AllProductsContextProvider>
 				</Route>
 				<Route path="/history">
