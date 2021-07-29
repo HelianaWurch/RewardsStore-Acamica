@@ -3,6 +3,17 @@ header img {
 	height: 30rem;
 }
 
+.container-filters ul li {
+	display: flex;
+	justify-content: center;
+	padding: 0 0.5rem;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+}
+
 .card-category {
 	margin-bottom: 0;
 	font-weight: 500;
