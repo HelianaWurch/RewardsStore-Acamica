@@ -6,9 +6,9 @@ import { AllProductsContext } from "../../contexts/AllProductsContext";
 import { FiltersContext } from "../../contexts/FiltersContext";
 
 function SearchProducts() {
-	const [isLoading, products] = useContext(AllProductsContext);
+	const [products] = useContext(AllProductsContext);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [productsPerPage, setProductsPerPage] = useState(12);
+	const [productsPerPage] = useState(12);
 	const [filters] = useContext(FiltersContext);
 	const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -42,7 +42,7 @@ function SearchProducts() {
 
 	return (
 		<section className="container">
-			<div className="container d-flex row justify-content-between mt-4">
+			<div className="container d-flex row justify-content-md-between justify-content-center mt-4">
 				<div className="d-none d-lg-block mt-2">
 					<h5>SORT BY | </h5>
 				</div>
@@ -58,6 +58,9 @@ function SearchProducts() {
 					<Product key={product._id} product={product} />
 				))}
 			</div>
+			<h6 className="text-right text-secondary">
+				Page: <strong>{currentPage}</strong>
+			</h6>
 		</section>
 	);
 }

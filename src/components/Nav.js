@@ -8,7 +8,7 @@ import BuyCoins from "./ModalContent/BuyCoins";
 import { UserContext } from "../contexts/UserContext";
 
 function Nav() {
-	const [isLoading, userInfo, setUserInfo] = useContext(UserContext);
+	const [userInfo, setUserInfo] = useContext(UserContext);
 	const [openModal, setOpenModal] = useState(false);
 
 	function modalContent(userInfo, setUserInfo) {

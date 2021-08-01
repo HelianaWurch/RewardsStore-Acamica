@@ -149,5 +149,8 @@ $RECYCLE.BIN/
 *.lnk
 
 /.idea/
-
+!/src/services/img/header-x1.png
+!/src/services/img/icons/buy-blue.svg
+!/src/services/img/icons/buy-white.svg
+!/src/services/img/icons/coin.svg
 # End of https://www.toptal.com/developers/gitignore/api/windows,react,visualstudiocode,images

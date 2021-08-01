@@ -3,7 +3,7 @@ import Pagination from "../../components/Pagination";
 import { getHistory } from "../../services/api/api";
 
 function History() {
-	const [productsPerPage, setProductsPerPage] = useState(10);
+	const [productsPerPage] = useState(20);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [historyData, setHistoryData] = useState([]);
 
@@ -21,24 +21,25 @@ function History() {
 
 	return (
 		<section className="container">
-			<div className="container row d-flex justify-content-between mt-4">
+			<div className="container row d-flex justify-content-center justify-content-md-between mt-4">
 				<div className="flex-fill d-none d-lg-block mt-2">
 					<h5>HISTORY |</h5>
 				</div>
 				<Pagination
-					className="flex-grow-1"
 					productsPerPage={productsPerPage}
 					totalProducts={historyData.length}
 					paginate={paginate}
 				/>
 			</div>
-
-			<div className="my-3 row">
+			<div className="container d-flex justify-content-center list-group my-3">
 				<ul>
 					{currentProducts.map((product) => (
-						<li key={product.createDate}>{product.name}</li>
+						<li className="list-group-item" key={product.createDate}>
+							{product.name}
+						</li>
 					))}
 				</ul>
+				<h6 className="text-right text-secondary">Page: {currentPage}</h6>
 			</div>
 		</section>
 	);
