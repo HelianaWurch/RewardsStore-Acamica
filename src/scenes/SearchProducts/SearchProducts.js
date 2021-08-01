@@ -42,7 +42,10 @@ function SearchProducts() {
 
 	return (
 		<section className="container">
-			<div className="container d-flex row justify-content-center mt-4">
+			<div className="container d-flex row justify-content-between mt-4">
+				<div className="d-none d-lg-block mt-2">
+					<h5>SORT BY | </h5>
+				</div>
 				<Filters />
 				<Pagination
 					productsPerPage={productsPerPage}
@@ -50,7 +53,7 @@ function SearchProducts() {
 					paginate={paginate}
 				/>
 			</div>
-			<div className="justify-content-around my-3 row">
+			<div className="justify-content-center my-3 row">
 				{currentProducts.map((product) => (
 					<Product key={product._id} product={product} />
 				))}

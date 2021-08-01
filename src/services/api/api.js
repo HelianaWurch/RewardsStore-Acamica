@@ -36,15 +36,39 @@ export function getProducts(fn) {
 	fetch(`${API_URL}/products`, requestOptions)
 		.then((response) => response.json())
 		.then((json) => {
-			console.log(json);
 			fn(json);
 		})
 		.catch((err) => console.log(err));
 }
 
+// -------------------------------------REDEEM PRODUCTS--------------------------------------------
+
+export function getReedemProducts(productId, fn) {
+	let redeem = JSON.stringify({ productId: productId });
+	console.log(redeem);
+
+	let requestOptions = {
+		method: "POST",
+		headers: myHeaders,
+		body: redeem,
+		redirect: "follow",
+	};
+
+	fetch(`${API_URL}/redeem`, requestOptions)
+		.then((response) => response.json())
+		.then((json) => {
+			// fn(json);
+			return true;
+		})
+		.catch((err) => {
+			console.log(err);
+			return false;
+		});
+}
+
 // -----------------------------------------HISTORY------------------------------------------------
 
-export function getHistory() {
+export function getHistory(setRedeemProducts) {
 	let requestOptions = {
 		method: "GET",
 		headers: myHeaders,
@@ -53,7 +77,7 @@ export function getHistory() {
 
 	fetch(`${API_URL}/user/history`, requestOptions)
 		.then((response) => response.json())
-		.then((json) => console.log(json))
+		.then((json) => setRedeemProducts(json))
 		.catch((err) => console.log(err));
 }
 

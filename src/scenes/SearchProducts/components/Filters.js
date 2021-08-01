@@ -11,11 +11,8 @@ function Filters() {
 	}
 
 	return (
-		<div className=" container-filters col-md-6 col-12 ml-4">
-			<ul className="nav">
-				<li className="nav-item">
-					<h5 className="mt-2">SORT BY | </h5>
-				</li>
+		<div className="container-filters col-md-5 col-12 ">
+			<ul className="nav justify-content-center">
 				<li className="nav-item">
 					<label className="btn btn-secondary">
 						<input
