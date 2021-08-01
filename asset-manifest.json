@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/RewardsStore-Acamica/static/css/main.7fbfde9c.chunk.css",
-    "main.js": "/RewardsStore-Acamica/static/js/main.8435ae94.chunk.js",
-    "main.js.map": "/RewardsStore-Acamica/static/js/main.8435ae94.chunk.js.map",
+    "main.js": "/RewardsStore-Acamica/static/js/main.106dc74f.chunk.js",
+    "main.js.map": "/RewardsStore-Acamica/static/js/main.106dc74f.chunk.js.map",
     "runtime-main.js": "/RewardsStore-Acamica/static/js/runtime-main.31928162.js",
     "runtime-main.js.map": "/RewardsStore-Acamica/static/js/runtime-main.31928162.js.map",
-    "static/js/2.239768c8.chunk.js": "/RewardsStore-Acamica/static/js/2.239768c8.chunk.js",
-    "static/js/2.239768c8.chunk.js.map": "/RewardsStore-Acamica/static/js/2.239768c8.chunk.js.map",
+    "static/js/2.e8361a0f.chunk.js": "/RewardsStore-Acamica/static/js/2.e8361a0f.chunk.js",
+    "static/js/2.e8361a0f.chunk.js.map": "/RewardsStore-Acamica/static/js/2.e8361a0f.chunk.js.map",
     "index.html": "/RewardsStore-Acamica/index.html",
     "static/css/main.7fbfde9c.chunk.css.map": "/RewardsStore-Acamica/static/css/main.7fbfde9c.chunk.css.map",
-    "static/js/2.239768c8.chunk.js.LICENSE.txt": "/RewardsStore-Acamica/static/js/2.239768c8.chunk.js.LICENSE.txt",
+    "static/js/2.e8361a0f.chunk.js.LICENSE.txt": "/RewardsStore-Acamica/static/js/2.e8361a0f.chunk.js.LICENSE.txt",
     "static/media/buy-blue.13783e2a.svg": "/RewardsStore-Acamica/static/media/buy-blue.13783e2a.svg",
     "static/media/buy-white.3eddcc1e.svg": "/RewardsStore-Acamica/static/media/buy-white.3eddcc1e.svg",
     "static/media/coin.1fc21bda.svg": "/RewardsStore-Acamica/static/media/coin.1fc21bda.svg",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.31928162.js",
-    "static/js/2.239768c8.chunk.js",
+    "static/js/2.e8361a0f.chunk.js",
     "static/css/main.7fbfde9c.chunk.css",
-    "static/js/main.8435ae94.chunk.js"
+    "static/js/main.106dc74f.chunk.js"
   ]
 }
