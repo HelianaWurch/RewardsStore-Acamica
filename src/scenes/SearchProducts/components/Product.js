@@ -28,20 +28,20 @@ const HoverableProductCard = ({ productInfo }) => {
 	);
 };
 
-const HoverProductCard = ({ productInfo, redeemProduct, redeemOk, setOpenModal, userCoins }) => {
+const HoverProductCard = ({ productInfo, redeemProduct, setOpenModal, userCoins }) => {
 	return (
 		<div className="card-hover" id="card-btn-container">
 			{userCoins >= productInfo.price ? (
 				<div className="card-body-hover">
 					<div href={productInfo.imgUrl} className="icon-container">
-						<img src={bagIconHover} className="card-img-top icon-bag-hover" alt="..." />
+						<img src={bagIconHover} className="card-img-top icon-bag-hover" alt="icon-bag" />
 					</div>
 					<div className="card-container">
 						<div>
 							<h2 className="card-text">{productInfo.price}</h2>
 						</div>
 						<div>
-							<img className="ml-2 card-hover-coin" src={iconCoin} alt="..." />
+							<img className="ml-2 card-hover-coin" src={iconCoin} alt="coins" />
 						</div>
 					</div>
 					<div className="card-container">
@@ -67,7 +67,7 @@ const HoverProductCard = ({ productInfo, redeemProduct, redeemOk, setOpenModal, 
 							<h2 className="card-text">{Math.abs(userCoins - productInfo.price)}</h2>
 						</div>
 						<div>
-							<img className="ml-2 card-hover-coin" src={iconCoin} alt="..." />
+							<img className="ml-2 card-hover-coin" src={iconCoin} alt="coins" />
 						</div>
 					</div>
 				</div>
@@ -77,7 +77,7 @@ const HoverProductCard = ({ productInfo, redeemProduct, redeemOk, setOpenModal, 
 };
 
 function Product(props) {
-	const [isLoading, userInfo, setUserInfo, userCoins] = useContext(UserContext);
+	const [userInfo, setUserInfo, userCoins] = useContext(UserContext);
 
 	const [isHovering, setIsHovering] = useState(false);
 	const [redeemOk, setRedeemOk] = useState(false);

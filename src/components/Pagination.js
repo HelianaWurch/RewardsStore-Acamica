@@ -7,8 +7,8 @@ function Pagination({ productsPerPage, totalProducts, paginate }) {
 	}
 
 	return (
-		<div className="col-12 col-md-2 ">
-			<nav>
+		<div>
+			<nav className="d-flex justify-content-center justify-content-md-end">
 				<ul className="pagination">
 					{pageNumbers.map((number) => (
 						<li key={number} className="page-item">
