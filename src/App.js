@@ -14,7 +14,9 @@ function App() {
 					<Nav />
 				</UserContextProvider>
 				<Header />
-				<Main />
+				<UserContextProvider>
+					<Main />
+				</UserContextProvider>
 			</div>
 		</Router>
 	);

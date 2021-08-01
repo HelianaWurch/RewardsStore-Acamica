@@ -1,19 +1,29 @@
 import React, { useContext, useState } from "react";
 import iconCoin from "../services/img/icons/coin.svg";
-import img2 from "../services/img/aerolab-logo.svg";
 import { Link } from "react-router-dom";
 
-import ModalCoins from "./ModalCoins";
+import Modal from "./Modal";
+import BuyCoins from "./ModalContent/BuyCoins";
 
 import { UserContext } from "../contexts/UserContext";
 
 function Nav() {
-	const [isLoading, userInfo] = useContext(UserContext);
+	const [isLoading, userInfo, setUserInfo] = useContext(UserContext);
 	const [openModal, setOpenModal] = useState(false);
+
+	function modalContent(userInfo, setUserInfo) {
+		return <BuyCoins userInfo={userInfo} setUserInfo={setUserInfo} />;
+	}
 
 	return (
 		<div>
-			{openModal && <ModalCoins closeModal={setOpenModal} />}
+			{openModal && (
+				<Modal
+					title="Buy More Coins..."
+					closeModal={setOpenModal}
+					content={modalContent(userInfo, setUserInfo)}
+				/>
+			)}
 			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 				<div className="inline-block navbar-brand">
 					<div className="container py-2">
@@ -34,7 +44,7 @@ function Nav() {
 					</div>
 				</div>
 				<button
-					class="navbar-toggler"
+					className="navbar-toggler"
 					type="button"
 					data-toggle="collapse"
 					data-target="#navbarNavAltMarkup"

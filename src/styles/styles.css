@@ -3,6 +3,11 @@ header img {
 	height: 30rem;
 }
 
+h4 {
+	padding: 1rem;
+	color: #0ad4fa;
+}
+
 .container-filters ul li {
 	display: flex;
 	justify-content: center;
@@ -40,8 +45,10 @@ header img {
 }
 
 .icon-bag-hover {
-	padding: 0.7rem;
-	margin-right: 0.5rem;
+	position: absolute;
+	top: 1%;
+	right: -2%;
+	padding: 0.6rem;
 	width: 25%;
 }
 
@@ -132,6 +139,7 @@ header img {
 	height: 100vh;
 	background-color: rgba(60, 60, 60, 0.9);
 	position: fixed;
+	top: 0%;
 	left: -5%;
 	padding: 10%;
 	justify-content: center;
