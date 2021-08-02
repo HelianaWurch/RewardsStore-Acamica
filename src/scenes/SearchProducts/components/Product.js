@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import "../../../styles/styles.css";
 
 import { getReedemProducts } from "../../../services/api/api";
 import { UserContext } from "../../../contexts/UserContext";
@@ -103,9 +104,11 @@ function Product(props) {
 	};
 
 	function redeemProduct(id, cost, userCoins) {
+		console.log(userCoins);
 		const redeemStatus = getReedemProducts(id);
 		const userNewCoins = userCoins - cost;
 		setUserInfo({ ...userInfo, points: userNewCoins });
+		console.log(userNewCoins);
 		setRedeemOk(redeemStatus);
 	}
 
@@ -115,17 +118,17 @@ function Product(props) {
 			onMouseEnter={handleMouseOver}
 			onMouseLeave={handleMouseOut}
 		>
-			{openModal && <Modal title="Product" closeModal={setOpenModal} content={modalContent()} />}
-			{isHovering && (
+			{isHovering ? (
 				<HoverProductCard
 					productInfo={productInfo}
 					redeemProduct={redeemProduct}
-					redeemOk={redeemOk}
 					setOpenModal={setOpenModal}
 					userCoins={userCoins}
 				/>
+			) : (
+				<HoverableProductCard productInfo={productInfo} />
 			)}
-			<HoverableProductCard productInfo={productInfo} />
+			{openModal && <Modal title="Product" closeModal={setOpenModal} content={modalContent()} />}
 		</div>
 	);
 }

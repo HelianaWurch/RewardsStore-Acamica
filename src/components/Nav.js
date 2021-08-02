@@ -56,10 +56,10 @@ function Nav() {
 				</button>
 				<div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 					<div className="navbar-nav nav-box">
-						<Link className="grl-font-style nav-link-a" to="/">
+						<Link className="grl-font-style nav-link-a" to={process.env.PUBLIC_URL + "/"}>
 							HOME
 						</Link>
-						<Link className="grl-font-style  nav-link-a" to="/history">
+						<Link className="grl-font-style  nav-link-a" to={process.env.PUBLIC_URL + "/history"}>
 							HISTORY
 						</Link>
 						<button

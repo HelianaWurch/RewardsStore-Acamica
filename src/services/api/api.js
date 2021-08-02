@@ -43,9 +43,8 @@ export function getProducts(fn) {
 
 // -------------------------------------REDEEM PRODUCTS--------------------------------------------
 
-export function getReedemProducts(productId, fn) {
+export function getReedemProducts(productId) {
 	let redeem = JSON.stringify({ productId: productId });
-	console.log(redeem);
 
 	let requestOptions = {
 		method: "POST",
@@ -57,7 +56,6 @@ export function getReedemProducts(productId, fn) {
 	fetch(`${API_URL}/redeem`, requestOptions)
 		.then((response) => response.json())
 		.then((json) => {
-			// fn(json);
 			return true;
 		})
 		.catch((err) => {
@@ -99,7 +97,6 @@ export function postCoins(amount, userInfo, setUserInfo) {
 			const newCoinsState = { ...userInfo };
 			newCoinsState.points = json["New Points"];
 			setUserInfo(newCoinsState);
-			setUserInfo(json);
 		})
 		.catch((err) => console.log(err));
 }

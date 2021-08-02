@@ -9,14 +9,14 @@ function Main() {
 	return (
 		<main>
 			<Switch>
-				<Route exact path="/">
+				<Route exact path={process.env.PUBLIC_URL + "/"}>
 					<AllProductsContextProvider>
 						<FiltersContextProvider>
 							<SearchProducts />
 						</FiltersContextProvider>
 					</AllProductsContextProvider>
 				</Route>
-				<Route path="/history">
+				<Route path={process.env.PUBLIC_URL + "/"}>
 					<History />
 				</Route>
 			</Switch>

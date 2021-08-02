@@ -13,7 +13,7 @@ function UserContextProvider({ children }) {
 
 	useEffect(() => {
 		getUser(setUserInfo);
-	}, [userInfo]);
+	}, []);
 
 	return (
 		<UserContext.Provider value={[userInfo, setUserInfo, userCoins]}>{children}</UserContext.Provider>
