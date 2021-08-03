@@ -21,7 +21,7 @@ export function getUser(fn) {
 		.then((json) => {
 			fn(json);
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => console.error(err));
 }
 
 // -----------------------------------------PRODUCTS-----------------------------------------------
@@ -38,7 +38,7 @@ export function getProducts(fn) {
 		.then((json) => {
 			fn(json);
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => console.error(err));
 }
 
 // -------------------------------------REDEEM PRODUCTS--------------------------------------------
@@ -54,12 +54,11 @@ export function getReedemProducts(productId) {
 	};
 
 	fetch(`${API_URL}/redeem`, requestOptions)
-		.then((response) => response.json())
-		.then((json) => {
+		.then((response) => {
 			return true;
 		})
 		.catch((err) => {
-			console.log(err);
+			console.error(err);
 			return false;
 		});
 }
@@ -76,27 +75,28 @@ export function getHistory(setRedeemProducts) {
 	fetch(`${API_URL}/user/history`, requestOptions)
 		.then((response) => response.json())
 		.then((json) => setRedeemProducts(json))
-		.catch((err) => console.log(err));
+		.catch((err) => console.error(err));
 }
 
 // ------------------------------------------POINTS------------------------------------------------
 
 export function postCoins(amount, userInfo, setUserInfo) {
-	let coins = JSON.stringify({ amount: amount });
+	let points = JSON.stringify({ amount: amount });
 
 	let requestOptions = {
 		method: "POST",
 		headers: myHeaders,
-		body: coins,
+		body: points,
 		redirect: "follow",
 	};
 
 	fetch(`${API_URL}/user/points`, requestOptions)
 		.then((response) => response.json())
 		.then((json) => {
+			let newCoinsData = json;
 			const newCoinsState = { ...userInfo };
-			newCoinsState.points = json["New Points"];
+			newCoinsState.points = newCoinsData["New Points"];
 			setUserInfo(newCoinsState);
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => console.error(err));
 }

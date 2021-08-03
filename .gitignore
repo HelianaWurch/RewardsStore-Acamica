@@ -154,3 +154,6 @@ $RECYCLE.BIN/
 !/src/services/img/icons/buy-white.svg
 !/src/services/img/icons/coin.svg
 # End of https://www.toptal.com/developers/gitignore/api/windows,react,visualstudiocode,images
+
+
+yarn.lock

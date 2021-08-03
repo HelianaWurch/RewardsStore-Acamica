@@ -1,17 +1,18 @@
 import React from "react";
 import img1 from "../services/img/header-x1.png";
 
+import { Image } from "react-bootstrap";
+
 function Header() {
 	return (
-		<header className="d-flex justify-content-center ">
-			<div className="carousel-inner">
-				<div className="carousel-item active">
-					<img src={img1} className="d-block w-100" alt="..." />
-					<div className="carousel-caption d-none d-md-block text-left">
-						<h1>REWARDS STORE</h1>
-					</div>
-				</div>
-			</div>
+		<header>
+			<h1
+				className="d-none d-lg-block text-white"
+				style={{ position: "absolute", top: "16rem", left: "15rem", fontSize: "3.5rem" }}
+			>
+				Rewards Store
+			</h1>
+			<Image src={img1} fluid />
 		</header>
 	);
 }
