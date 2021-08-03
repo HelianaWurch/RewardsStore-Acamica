@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Pagination from "../../components/Pagination";
+import ItemsPagination from "../../components/ItemsPagination";
 import { getHistory } from "../../services/api/api";
 
+import { Container, Row, Col, ListGroup } from "react-bootstrap";
+
 function History() {
-	const [productsPerPage] = useState(20);
+	const [productsPerPage] = useState(25);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [historyData, setHistoryData] = useState([]);
 
@@ -20,28 +22,44 @@ function History() {
 	}, []);
 
 	return (
-		<section className="container">
-			<div className="container row d-flex justify-content-center justify-content-md-between mt-4">
-				<div className="flex-fill d-none d-lg-block mt-2">
-					<h5>HISTORY |</h5>
-				</div>
-				<Pagination
-					productsPerPage={productsPerPage}
-					totalProducts={historyData.length}
-					paginate={paginate}
-				/>
-			</div>
-			<div className="container d-flex justify-content-center list-group my-3">
-				<ul>
-					{currentProducts.map((product) => (
-						<li className="list-group-item" key={product.createDate}>
-							{product.name}
-						</li>
-					))}
-				</ul>
-				<h6 className="text-right text-secondary">Page: {currentPage}</h6>
-			</div>
-		</section>
+		<Container className="mt-4 ">
+			<Row className="text-center">
+				<Col sm={12} md={6} lg={6}>
+					<Container className="d-flex justify-content-center justify-content-md-start">
+						<h5>HISTORY | </h5>
+					</Container>
+				</Col>
+
+				<Col sm={12} md={6} lg={6}>
+					<ItemsPagination
+						productsPerPage={productsPerPage}
+						totalProducts={historyData.length}
+						paginate={paginate}
+					/>
+				</Col>
+			</Row>
+			<Container>
+				<Row>
+					<ListGroup>
+						{currentProducts.map((product) => (
+							<ListGroup.Item key={product.createDate}>
+								<Row>
+									<Col xs lg="10">
+										{product.name}
+									</Col>
+									<Col className="text-end">${product.cost}</Col>
+								</Row>
+							</ListGroup.Item>
+						))}
+					</ListGroup>
+				</Row>
+				<Container className="text-end">
+					<p className="text-secondary mt-2" style={{ fontWeight: 700 }}>
+						Page: {currentPage}
+					</p>
+				</Container>
+			</Container>
+		</Container>
 	);
 }
 

@@ -1,5 +1,5 @@
-import "./styles/styles.css";
-import Nav from "./components/Nav";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavHeader from "./components/NavHeader";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -11,10 +11,8 @@ function App() {
 		<Router>
 			<div className="App">
 				<UserContextProvider>
-					<Nav />
-				</UserContextProvider>
-				<Header />
-				<UserContextProvider>
+					<NavHeader />
+					<Header />
 					<Main />
 				</UserContextProvider>
 			</div>

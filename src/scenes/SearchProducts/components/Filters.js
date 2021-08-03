@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { FiltersContext } from "../../../contexts/FiltersContext";
 
+import { Form } from "react-bootstrap";
+
 function Filters() {
 	const [filters, setFilters] = useContext(FiltersContext);
 
@@ -11,49 +13,25 @@ function Filters() {
 	}
 
 	return (
-		<div className="container-filters col-md-5 col-12 ">
-			<ul className="nav justify-content-center">
-				<li className="nav-item">
-					<label className="btn btn-secondary">
-						<input
-							className="for-check-input mr-2"
-							type="radio"
-							name="price"
-							id="all-products"
-							value="all-products"
-							onChange={handleFilters}
-						/>
-						All
-					</label>
-				</li>
-				<li className="nav-item">
-					<label className="btn btn-secondary">
-						<input
-							className="for-check-input mr-2"
-							type="radio"
-							name="price"
-							id="lowest"
-							value="lowest"
-							onChange={handleFilters}
-						/>
-						Lowest Price
-					</label>
-				</li>
-				<li className="nav-item">
-					<label className="btn btn-secondary">
-						<input
-							className="for-check-input mr-2"
-							type="radio"
-							name="price"
-							id="highest"
-							value="highest"
-							onChange={handleFilters}
-						/>
-						Highest Price
-					</label>
-				</li>
-			</ul>
-		</div>
+		<Form onChange={handleFilters}>
+			<Form.Check
+				inline
+				label="All"
+				name="price"
+				type="radio"
+				id="all-products"
+				value="all-products"
+			/>
+			<Form.Check inline label="Lowest Price" name="price" type="radio" id="lowest" value="lowest" />
+			<Form.Check
+				inline
+				label="Highest Price"
+				name="price"
+				type="radio"
+				id="highest"
+				value="highest"
+			/>
+		</Form>
 	);
 }
 

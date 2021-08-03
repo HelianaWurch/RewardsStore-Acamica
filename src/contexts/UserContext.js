@@ -9,15 +9,11 @@ function UserContextProvider({ children }) {
 		points: 0,
 	});
 
-	let userCoins = userInfo.points;
-
 	useEffect(() => {
 		getUser(setUserInfo);
-	}, [userInfo]);
+	}, []);
 
-	return (
-		<UserContext.Provider value={[userInfo, setUserInfo, userCoins]}>{children}</UserContext.Provider>
-	);
+	return <UserContext.Provider value={[userInfo, setUserInfo]}>{children}</UserContext.Provider>;
 }
 
 export { UserContextProvider, UserContext };
